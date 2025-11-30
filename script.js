@@ -5,10 +5,11 @@
 // document.querySelectorAll() will return a nodelist. It can select through all the elemetns that have the same class name.
 // For example the below code finds the first game-square div and makes it red. 
 
-
+const players = ['X', 'O'];
 
 const gameSquares = document.querySelectorAll('.game-square'); 
-const playAgain = document.querySelector("#play-again");
+const restartButton = document.getElementById('button-play-again');
+const playAgain = document.querySelector('#play-again');
 const winConditions = [
   [0, 1, 2], 
   [3, 4, 5],
