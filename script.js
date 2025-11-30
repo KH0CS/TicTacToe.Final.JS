@@ -9,11 +9,11 @@
 const players = ['X', 'O'];
 
 // made const variables and gave them their respective values in the HTML file.
-const gameSquares = document.querySelectorAll('.game-square'); 
+const gameSquares = document.querySelectorAll('.game-board'); 
 const restartButton = document.getElementById('button-play-again');
 const playAgain = document.querySelector('#play-again');
 
-// made all the win condtions
+// made all the win conditions
 const winConditions = [
   [0, 1, 2], 
   [3, 4, 5],
@@ -32,9 +32,13 @@ let currentPlayer = 'X';
 let active = false;
 
 function gameStart() {
-  gameSquares.forEach(game-Square => game-Square.addEventListener('click',))
+  gameSquares.forEach(square => game-square.addEventListener('click', squareClicked));
 }
 
 function squareClicked() {
-  const square0
+  const cellIndex = this.getAttribute('square');
+}
+
+function test () {
+  console.log("Test!");
 }
