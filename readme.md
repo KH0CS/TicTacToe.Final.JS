@@ -1,0 +1,2 @@
+Author: Kameron Rodriguez 
+Purpose: This final project is for us to show our understanding and know hows of putting together JavaScript HTML, and CSS all together to make a functional application. I chose to do the Tic Tac Toe game and it had set parameters that needed to be met. 
