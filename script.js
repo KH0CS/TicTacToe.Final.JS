@@ -30,17 +30,21 @@ const winConditions = [
 let playArea = ['', '', '', '', '', '', '', '', '',];
 let playerX = 'X';
 let playerO = 'O';
-let currentPlayer = 'X';
+let currentPlayer = playerX;
 let gameSquare;
 
+
+// What the window.onload is doing is when the game loads up then function will run. The function pretty much gets the play area from the HTML document by the Element class name.
 window.onload = function () {
   gameSquare = document.getElementsByClassName('game-square');
+  // We are making all the cells clickable for either and X or an O. The event listener is looking for a click and when there is a click it will run the checkBox function which should mark an X or an O depending who's turn it is. 
   for (let square of gameSquare) {
     square.addEventListener('click', checkBox);
   } 
 }
-
+// When this function is run it marks the square with an X or an O depending who's turn it is. and the current player changes after each click.
 function checkBox() {
 
   this.innerText = currentPlayer;
+  currentPlayer = (currentPlayer == playerX) ? playerO : playerX;
 }
