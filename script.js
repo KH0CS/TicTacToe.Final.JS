@@ -48,10 +48,22 @@ function checkBox() {
 
   // This updates the playArea array so we know and the game knows that there is a mark in the sqare.
   const squareIndex = parseInt(this.getAttribute('square'));
+  // This means if someone is already occupying that square then nothing will change in the square.
   if (playArea[squareIndex] != '' ) {
     return;
   }
-
+  // It is updating the playarea with an X or an O.
+  playArea[squareIndex] = currentPlayer;
   this.innerText = currentPlayer;
   currentPlayer = (currentPlayer == playerX) ? playerO : playerX;
 }
+
+function winner() 
+  for (let victor of winConditions ) {}
+    let k = playArea[victor[0]];
+    let h = playArea[victor[1]];
+    let m = playArea[victor[2]];
+    if (k == h && h == m && k != '') 
+    {
+      gameOver = true;
+    }
