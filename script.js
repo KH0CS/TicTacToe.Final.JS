@@ -32,6 +32,8 @@ let playerX = 'X';
 let playerO = 'O';
 let currentPlayer = playerX;
 let gameSquare;
+let gameOver = false;
+let playAgainButton;
 
 
 // What the window.onload is doing is when the game loads up then function will run. The function pretty much gets the play area from the HTML document by the Element class name.
@@ -41,9 +43,15 @@ window.onload = function () {
   for (let square of gameSquare) {
     square.addEventListener('click', checkBox);
   } 
+  playAgainButton = this.document.getElementById('button-play-again');
 }
 // When this function is run it marks the square with an X or an O depending who's turn it is. and the current player changes after each click.
 function checkBox() {
+
+  //This just checks if the game is over and you click an area nothing happens.
+  if (gameOver) {
+    return;
+  }
 
 
   // This updates the playArea array so we know and the game knows that there is a mark in the sqare.
@@ -58,12 +66,17 @@ function checkBox() {
   currentPlayer = (currentPlayer == playerX) ? playerO : playerX;
 }
 
-function winner() 
-  for (let victor of winConditions ) {}
+// the function checks if the parameters for winning have been met.
+//it's checking to see if k, h, m are the same and not empty.
+function gameWinner() {
+  for (let victor of winConditions ) {
     let k = playArea[victor[0]];
     let h = playArea[victor[1]];
     let m = playArea[victor[2]];
     if (k == h && h == m && k != '') 
-    {
+    
       gameOver = true;
-    }
+      return;
+    
+  }
+}
