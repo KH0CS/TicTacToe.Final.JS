@@ -44,6 +44,7 @@ window.onload = function () {
     square.addEventListener('click', checkBox);
   } 
   playAgainButton = this.document.getElementById('button-play-again');
+  playAgainButton.addEventListener('click', playAgain);
 }
 // When this function is run it marks the square with an X or an O depending who's turn it is. and the current player changes after each click.
 function checkBox() {
@@ -73,10 +74,19 @@ function gameWinner() {
     let k = playArea[victor[0]];
     let h = playArea[victor[1]];
     let m = playArea[victor[2]];
+
     if (k == h && h == m && k != '') 
     
       gameOver = true;
       return;
     
+  }
+}
+
+function playAgain() {
+  gameOver = false;
+  gameBoard = ['', '', '', '', '', '', '', '', ''];
+  for (let square of gameSquare) {
+    square.innerText = '';
   }
 }
