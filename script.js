@@ -45,6 +45,13 @@ window.onload = function () {
 // When this function is run it marks the square with an X or an O depending who's turn it is. and the current player changes after each click.
 function checkBox() {
 
+
+  // This updates the playArea array so we know and the game knows that there is a mark in the sqare.
+  const squareIndex = parseInt(this.getAttribute('square'));
+  if (playArea[squareIndex] != '' ) {
+    return;
+  }
+
   this.innerText = currentPlayer;
   currentPlayer = (currentPlayer == playerX) ? playerO : playerX;
 }
