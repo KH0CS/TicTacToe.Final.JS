@@ -31,14 +31,13 @@ let playArea = ['', '', '', '', '', '', '', '', '',];
 let currentPlayer = 'X';
 let active = false;
 
-function gameStart() {
-  gameSquares.forEach(square => game-square.addEventListener('click', squareClicked));
+window.onload = function () {
+  gameBoard = this.document.getElementByClassName('game-square');
+  for (let cell of gameSquare) {
+    cell.addEventListener('click', markCell);
+  } 
 }
 
-function squareClicked() {
-  const cellIndex = this.getAttribute('square');
-}
-
-function test () {
-  console.log("Test!");
+function markCell () {
+  this.innerText = currentPlayer;
 }
