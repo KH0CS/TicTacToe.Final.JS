@@ -6,13 +6,13 @@
 // For example the below code finds the first game-square div and makes it red. 
 
 // made a const variable and gave it 2 players.
-const players = ['X', 'O'];
+
 
 // made const variables and gave them their respective values in the HTML file.
-const gameSquares = document.querySelectorAll('.game-board'); 
+/* const gameSquares = document.querySelectorAll('.game-board'); 
 const restartButton = document.getElementById('button-play-again');
 const playAgain = document.querySelector('#play-again');
-
+*/
 // made all the win conditions
 const winConditions = [
   [0, 1, 2], 
@@ -28,16 +28,19 @@ const winConditions = [
 // made a let variable so currentPlayer is always starting at X.
 // made a let variable active and set it to a false boolean so the game doesnt start until we say so. 
 let playArea = ['', '', '', '', '', '', '', '', '',];
+let playerX = 'X';
+let playerO = 'O';
 let currentPlayer = 'X';
-let active = false;
+let gameSquare;
 
 window.onload = function () {
-  gameBoard = this.document.getElementByClassName('game-square');
-  for (let cell of gameSquare) {
-    cell.addEventListener('click', markCell);
+  gameSquare = document.getElementsByClassName('game-square');
+  for (let square of gameSquare) {
+    square.addEventListener('click', checkBox);
   } 
 }
 
-function markCell () {
+function checkBox() {
+
   this.innerText = currentPlayer;
 }
